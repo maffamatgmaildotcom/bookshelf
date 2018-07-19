@@ -17,6 +17,9 @@ source "https://rubygems.org"
 gem "rails", "~> 5.2.0"
 gem "jquery-rails"
 
+# use Puma as the app server
+gem 'puma', '~> 3.0'
+
 group :production, :development do
   gem "pg", '~> 0.15'
 end

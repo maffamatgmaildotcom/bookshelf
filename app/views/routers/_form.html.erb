@@ -1,0 +1,36 @@
+<%= form_with model: @router, local: true do |form| %>
+ 
+  <% if @router.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@router.errors.count, "error") %> prohibited
+        this router from being saved:
+      </h2>
+      <ul>
+        <% @router.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= form.label :address %><br>
+    <%= form.text_field :address %>
+  </p>
+ 
+  <p>
+    <%= form.label :username %><br>
+    <%= form.text_field :username %>
+  </p>
+
+  <p>
+    <%= form.label :location %><br>
+    <%= form.text_field :location %>
+  </p>  
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
