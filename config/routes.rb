@@ -20,5 +20,7 @@ Rails.application.routes.draw do
   # Restful routes for BooksController
   resources :books
 
+  resources :routers
+
 end
 # [END routes]

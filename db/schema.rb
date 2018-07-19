@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,18 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706182833) do
+ActiveRecord::Schema.define(version: 2018_07_19_212822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "books", force: :cascade do |t|
-    t.string   "title"
-    t.string   "author"
-    t.date     "published_on"
-    t.text     "description"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+  create_table "books", id: :serial, force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.date "published_on"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "routers", force: :cascade do |t|
+    t.string "address"
+    t.string "username"
+    t.string "location"
+    t.string "model"
+    t.text "description"
+    t.boolean "wireless"
+    t.boolean "wired"
+    t.boolean "dhcp"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

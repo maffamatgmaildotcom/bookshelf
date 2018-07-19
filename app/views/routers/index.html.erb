@@ -1,0 +1,24 @@
+<h3>Routers</h3>
+<%= link_to new_router_path, class: "btn btn-success btn-sm" do %>
+  <i class="glyphicon glyphicon-plus"></i>
+  <span>Add Router</span>
+<% end %>
+<table>
+  <tr>
+    <th>Address</th>
+    <th>Username</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @routers.each do |router| %>
+    <tr>
+      <td><%= router.address %></td>
+      <td><%= router.username %></td>
+      <td><%= link_to 'Show', router_path(router) %></td>
+      <td><%= link_to 'Edit', edit_router_path(router) %></td>
+      <td><%= link_to 'Destroy', router_path(router),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
